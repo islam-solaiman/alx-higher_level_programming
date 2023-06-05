@@ -2,32 +2,28 @@
 
 /**
  * check_cycle - function checks for loop in LL
- * @headt: head of linked list
+ * @list: head of linked list
  * Return: 1 if cycled, 0 if not
  */
 
 int check_cycle(listint_t *list)
 {
-	int x;
-	int i;
-	listint_t *current = NULL;
-	listint_t *checker = NULL;
+	listint_t *current, checker;
 
-	x = 0;
-	current = list;
-	while (current)
+	if (!list)
 	{
-		i = 0;
-		checker = list;
-		while (i < x)
+		return (0);
+	}
+	current = list;
+	checker = list->next;
+	while (checker && current && checker->next)
+	{
+		if (current == checker)
 		{
-			if (checker == current)
-				return (1);
-			i++;
-			checker = checker->next;
+			return (1);
 		}
-		x++;
 		current = current->next;
+		chcker = checker->next->next;
 	}
 	return (0);
 }
