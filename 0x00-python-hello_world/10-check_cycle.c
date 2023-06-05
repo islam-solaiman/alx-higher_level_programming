@@ -8,7 +8,7 @@
 
 int check_cycle(listint_t *list)
 {
-	int id;
+	int x;
 	int i;
 	listint_t *current = NULL;
 	listint_t *checker = NULL;
@@ -19,7 +19,7 @@ int check_cycle(listint_t *list)
 	{
 		i = 0;
 		checker = list;
-		while (i < id)
+		while (i < x)
 		{
 			if (checker == current)
 				return (1);
