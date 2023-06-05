@@ -8,26 +8,22 @@
 
 int check_cycle(listint_t *list)
 {
-	int x;
-	int i;
-	listint_t *current = NULL;
-	listint_t *checker = NULL;
+	listint_t *cur, *check;
 
-	x = 0;
-	current = list;
-	while (current)
+	if (!list)
 	{
-		i = 0;
-		checker = list;
-		while (i < x)
+		return (0);
+	}
+	cur = list;
+	check = list->next;
+	while (check && cur && ckeck->next)
+	{
+		if (curr == check)
 		{
-			if (checker == current)
-				return (1);
-			i++;
-			checker = checker->next;
+			return (1);
 		}
-		x++;
-		current = current->next;
+		cur = cur->next;
+		check = check->next->next;
 	}
 	return (0);
 }
