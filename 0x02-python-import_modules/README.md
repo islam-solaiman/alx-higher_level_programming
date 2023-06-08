@@ -1,9 +1,12 @@
+# 0x02. Python - import & modules
+
 # Resources
 ## Read or watch:
 
-	- [https://docs.python.org/3/tutorial/modules.html](Modules)
-	- [https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments](Command line arguments)
-	- [https://pypi.org/project/pycodestyle/](Pycodestyle – Style Guide for Python Code)
+	[Modules](https://docs.python.org/3/tutorial/modules.html)
+	[Command line arguments](https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments)
+	[Pycodestyle – Style Guide for Python Code](https://pypi.org/project/pycodestyle/)
+
 ### man or help:
 
 	- python3
