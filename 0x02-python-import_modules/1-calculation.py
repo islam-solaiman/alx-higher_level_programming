@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
+    if __name__ == "__main__":
     """print sum, difference, multiply and qoutient of 5 and 10"""
     from calculator_1 import add, sub, mul, div
 
