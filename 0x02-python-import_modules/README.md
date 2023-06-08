@@ -1,9 +1,9 @@
 # Resources
 ## Read or watch:
 
-	- [Modules](https://docs.python.org/3/tutorial/modules.html)
-	- [Command line arguments](https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments)
-	- [Pycodestyle – Style Guide for Python Code](https://pypi.org/project/pycodestyle/)
+	- [https://docs.python.org/3/tutorial/modules.html](Modules)
+	- [https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments](Command line arguments)
+	- [https://pypi.org/project/pycodestyle/](Pycodestyle – Style Guide for Python Code)
 ### man or help:
 
 	- python3
@@ -23,7 +23,7 @@ Google:
 
 # Requirements
 
-##General
+## General
 	- Allowed editors: vi, vim, emacs
 	- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 	- All your files should end with a new line
