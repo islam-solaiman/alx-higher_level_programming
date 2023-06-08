@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """author Islam Solaiman"""
 if __name__ == "__main__":
     """Print the addition of all arguments."""
