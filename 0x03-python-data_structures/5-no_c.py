@@ -5,4 +5,4 @@ def no_c(my_string):
     for c in my_string:
         if c != 'c' and c != 'C':
             new += c
-    ./5-main.pyreturn new
+    return new
