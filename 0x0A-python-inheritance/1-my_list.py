@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-"""class inherits from list Public instance method"""
+"""
+contains MyList class
+"""
+
 
 class MyList(list):
-    """print_sorted - prints the list in ascending order"""
+    """subclass of list"""
+    def __init__(self):
+        """initializes the object"""
+        super().__init__()
+
     def print_sorted(self):
-        """prints a list in ascending order."""
+        """prints sorted list"""
         print(sorted(self))
