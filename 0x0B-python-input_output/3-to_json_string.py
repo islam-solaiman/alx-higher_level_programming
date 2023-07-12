@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-""" function that returns the JSON representation 
-of an object (string):
-"""
-import json
+"""function that returns the JSON representation of an object"""
 
 
-def to_json_string(my_obj):
-    """ returns JSON representation of an object
-    
+def append_write(filename="", text=""):
+    """Appends string to end of UTF8 text file.
+
     Args:
-        my_obj: object
-    Raises:
-        Exception: when object can't be encoded
+        file-name (str): name of the file to append to.
+        text (str): string to append to the file.
+    Returns:
+        number of characters appended.
     """
-    return json.dumps(my_obj)
+    with open(filename, "a", encoding="utf-8") as f:
+        return f.write(text)
