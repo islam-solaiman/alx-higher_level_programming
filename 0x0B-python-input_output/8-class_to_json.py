@@ -6,7 +6,9 @@ serialization of an object
 
 
 def class_to_json(obj):
-    """ function that returns the dictionary description with simple data structure """
+    """ function that returns the dictionary description 
+    with simple data structure 
+    """
 
     res = {}
     if hasattr(obj, "__dict__"):
