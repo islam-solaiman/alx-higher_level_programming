@@ -6,7 +6,6 @@ import turtle
 import csv
 
 
-
 class Base:
     """The Base model.
 
@@ -93,7 +92,7 @@ class Base:
         """Return  class instantied from a dictionary of attributes.
 
         Args:
-            **dictionary (dict): Key/value pairs of the attributes to initialize.
+            **dictionary (dict): Key/value pairs of attributes to initialize.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
@@ -142,7 +141,7 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
-                                for d in list_dicts]
+                              for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
