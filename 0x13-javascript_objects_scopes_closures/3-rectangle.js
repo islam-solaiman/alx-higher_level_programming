@@ -7,17 +7,17 @@ class Rectangle {
       this.height = h;
     }
   }
-}
 
 print () {
   for (let i = 0; i < this.height; i++) {
     let rec = '';
-    for (let j = 0; j < this.width; j++)
-    rec += 'x';
+    for (let j = 0; j < this.width; j++) {
+      rec += 'x';
+    }
+    console.log(rec)
   }
-   console.log(rec);
+ }
 }
-
 
 
 module.exports = Rectangle;
