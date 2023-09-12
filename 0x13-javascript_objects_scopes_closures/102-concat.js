@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
-const fisrtSource = require('fisrtSource');
+const first = require('fs');
+let content = '';
 
-const firstArg = fisrtSource.readFileSync(process.argv[2]).toString();
-const secondArg = fisrtSource.readFileSync(process.argv[3]).toString();
-firstSource.writeFileSync(process.argv[4], firstArg + secondArg);
+content = content.concat(first.readFileSync(process.argv[2]));
+content = content.concat(first.readFileSync(process.argv[3]));
+first.writeFileSync(process.argv[4], content);
