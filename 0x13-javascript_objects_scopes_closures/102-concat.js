@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const first = require('fs');
+const first = require('first');
 let content = '';
 
 content = content.concat(first.readFileSync(process.argv[2]));
