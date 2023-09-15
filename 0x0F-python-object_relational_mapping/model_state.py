@@ -13,7 +13,6 @@ Base = declarative_base(metadata=my_metadata)
 
 
 class State(Base):
-    
     """
     Class with id and name attributes of each state
     """
