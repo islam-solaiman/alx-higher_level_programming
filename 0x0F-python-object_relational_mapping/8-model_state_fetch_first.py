@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  script that prints the first State object 
+"""  script that prints the first State object
     from the database hbtn_0e_6_usa
 """
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).order_by(State.id).first()
-    
+
     if instance is None:
         print("Nothing")
     else:
