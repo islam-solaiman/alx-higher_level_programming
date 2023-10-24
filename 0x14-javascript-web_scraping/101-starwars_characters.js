@@ -1,91 +1,36 @@
 #!/usr/bin/node
-
 const request = require('request');
 
-function getDataFrom (url) {
-  return new Promise(function (resolve, reject) {
-    request(url, function (err, _res, body) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(body);
-      }
+const movieId = process.argv[2];
+const url = 'https://swapi-api.alx-tools.com/api/films/';
+const fullUrl = url.concat(movieId);
+
+request(fullUrl, (error, response, body) => {
+  if (!error) {
+    const characters = JSON.parse(body).characters;
+    // Create variable to store the number of characters processed
+    let charactersProcessed = 0;
+    // Create empty array to store the character names
+    const characterNames = [];
+    characters.forEach((characterUrl) => {
+      request(characterUrl, (error, response, body) => {
+        if (!error) {
+          const charName = JSON.parse(body).name;
+          // Add character name to the array
+          characterNames.push(charName);
+        }
+        // Increment charactersProcessed variable
+        charactersProcessed++;
+        // Check all characters have been processed
+        if (charactersProcessed === characters.length) {
+          // Log character names when all characters have been processed
+          characterNames.forEach((actor) => {
+            console.log(actor);
+          });
+        }
+      });
     });
-  });
-}
-
-function errHandler (err) {
-  console.log(err);
-}
-
-function printMovieChar (movieId) {
-  const movieUri = `https://swapi-api.hbtn.io/api/films/${movieId}`;
-
-  getDataFrom(movieUri)
-    .then(JSON.parse, errHandler)
-    .then(function (res) {
-      const characters = res.characters;
-      const promises = [];
-
-      for (let i = 0; i#!/usr/bin/node
-
-const request = require('request');
-
-function getDataFrom (url) {
-  return new Promise(function (resolve, reject) {
-    request(url, function (err, _res, body) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(body);
-      }
-    });
-  });
-}
-
-function errHandler (err) {
-  console.log(err);
-}
-
-function printMovieChar (movieId) {
-  const movieUri = `https://swapi-api.hbtn.io/api/films/${movieId}`;
-
-  getDataFrom(movieUri)
-    .then(JSON.parse, errHandler)
-    .then(function (res) {
-      const characters = res.characters;
-      const promises = [];
-
-      for (let i = 0; i < characters.length; ++i) {
-        promises.push(getDataFrom(characters[i]));
-      }
-
-      Promise.all(promises)
-        .then((results) => {
-          for (let i = 0; i < results.length; ++i) {
-            console.log(JSON.parse(results[i]).name);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
-}
-
-printMovieChar(process.argv[2]); < characters.length; ++i) {
-        promises.push(getDataFrom(characters[i]));
-      }
-
-      Promise.all(promises)
-        .then((results) => {
-          for (let i = 0; i < results.length; ++i) {
-            console.log(JSON.parse(results[i]).name);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
-}
-
-printMovieChar(process.argv[2]);
+  } else {
+    console.log(error);
+  }
+});
